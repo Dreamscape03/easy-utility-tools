@@ -1,0 +1,22 @@
+.navbar{
+  height: 50px;
+  background-color: #2196f3; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border-bottom: 2px solid #fff;
+}
+
+.text {
+  cursor: pointer; 
+  transition: color 0.3s ease;
+}
+
+.text:hover {
+  text-decoration: underline;
+}
+.logo{
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
