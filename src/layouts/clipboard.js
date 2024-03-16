@@ -15,15 +15,15 @@ function Clipboard() {
   const [otpValue, setOtpValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [inputText, setInputText] = useState("");
-  const handleRetrieve = () => {
-    setShowRetrieveModal(true);
-  };
+  // const handleRetrieve = () => {
+  //   setShowRetrieveModal(true);
+  // };
 
-  const handleRetrieveConfirmation = () => {
-    setInputId("1234");
-    setShowRetrieveModal(false);
-    setShowModal(true);
-  };
+  // const handleRetrieveConfirmation = () => {
+  //   setInputId("1234");
+  //   setShowRetrieveModal(false);
+  //   setShowModal(true);
+  // };
 
   const handleCloseRetrieveModal = () => {
     setShowRetrieveModal(false);
@@ -50,7 +50,7 @@ function Clipboard() {
     toast.success("ID has been copied");
   };
 
-  const handleRetrieveButtonClick = () => {
+  const handleRetrieveButtonClick = async() => {
     if (otpValue.length < 4) {
       // alert("Please enter the 4 digit retrieval ID");
       toast.error("Please enter the 4 digit retrieval ID");
@@ -59,7 +59,7 @@ function Clipboard() {
     // alert("Retrieving text");
     toast.loading("Retrieving text");
     try {
-      const response = axios.get(
+      const response = await axios.get(
         `https://wip7mhydwhcixryqgshs6em4te0nxrks.lambda-url.us-west-2.on.aws/get_cache/online-clipboard/${otpValue}`
       );
       response.then((data) => {
@@ -67,15 +67,17 @@ function Clipboard() {
         toast.success("Text retrieved");
         setCopiedText(data.data.cache_values);
       });
+      console.log(response);
     } catch (error) {
       console.log(error);
+      toast.dismiss();
       // alert("Error retrieving text");
       toast.error("Error retrieving text");
     }
     closeModal();
     setShowCopiedTextModal(true);
   };
-  
+
   const handleCopyButtonClick = () => {
     navigator.clipboard.writeText(copiedText).then(() => {
       setShowCopiedTextModal(true);
@@ -85,6 +87,11 @@ function Clipboard() {
   };
 
   const handleOtpChange = (otp) => {
+    // accept only numbers
+    // if (isNaN(otp)){
+    //   console.log("Invalid input");
+    //   return;
+    // }
     setOtpValue(otp);
   };
   const handleInputTextChange = (e) => {
@@ -110,8 +117,8 @@ function Clipboard() {
           expiry: 1000,
         }
       );
-      // console.log(response.data);
-      if(response.status == 200){
+      console.log(response.data);
+      if (response.status == 200) {
         toast.dismiss();
         toast.success("Text sent to clipboard");
         setShowRetrieveModal(true);
@@ -119,6 +126,7 @@ function Clipboard() {
     } catch (error) {
       console.log(error);
       // alert("Error sending text to clipboard");
+      toast.dismiss();
       toast.error("Error sending text to clipboard");
     }
   };
@@ -190,16 +198,6 @@ function Clipboard() {
             </div>
           </div>
           <div>
-            {/* <div className="clipboard-retrieve-id">
-            <Button className="button" onClick={
-              () => {
-                setShowModal(true);
-              }
-            }>
-              <i className="fas fa-paste"></i> Retrieve text from clipboard
-            </Button>
-          </div> */}
-
             <Modal
               show={showModal}
               onHide={closeModal}
@@ -213,9 +211,12 @@ function Clipboard() {
                 <OtpInput
                   value={otpValue}
                   onChange={handleOtpChange}
+
                   numInputs={4}
                   separator={<span> </span>}
                   inputStyle={{ width: "3rem", height: "3rem" }}
+                  inputType="tel"
+                  
                   renderInput={(inputProps, index) => (
                     <input
                       {...inputProps}

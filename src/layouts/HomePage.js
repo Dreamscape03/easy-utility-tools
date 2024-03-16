@@ -16,13 +16,12 @@ const HomePage = () => {
       <Navbar />
       <div className="container cols-1 mx-auto">
         <div className="header-container text-center">
-          {/* <div className="header-text">Easy Utility Tools</div> */}
+          <h1>Free Online Clipboard: Effortless Sharing and Organization</h1>
           <div className="subheader-text">
-            Welcome to a suite of utility tools crafted to simplify your daily
-            tasks. These tools are accessible worldwide, free of charge, and
-            engineered for user-friendliness. They're optimized for speed and
-            efficiency, ensuring seamless integration into your routine,
-            wherever you are.
+            Welcome to Easy Utility Tools, your ultimate destination for the
+            best online clipboard experience. Say goodbye to traditional
+            clipboard limitations and embrace the freedom of digital sharing and
+            organization with our intuitive platform
           </div>
         </div>
         <div className="card-container flex justify-center">

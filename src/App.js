@@ -7,7 +7,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/Clipboard" element={<Clipboard />} />
+        <Route path="/clipboard" element={<Clipboard />} />
       </Routes>
     </Router>
   );
