@@ -16,7 +16,7 @@ const HomePage = () => {
       <Navbar />
       <div className="container cols-1 mx-auto">
         <div className="header-container text-center">
-          <h1>Free Online Clipboard: Effortless Sharing and Organization</h1>
+          <h1 className="header-text">Free Online Clipboard: Effortless Sharing and Organization</h1>
           <div className="subheader-text">
             Welcome to Easy Utility Tools, your ultimate destination for the
             best online clipboard experience. Say goodbye to traditional

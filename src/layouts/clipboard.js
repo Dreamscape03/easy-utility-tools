@@ -62,16 +62,17 @@ function Clipboard() {
       const response = await axios.get(
         `https://wip7mhydwhcixryqgshs6em4te0nxrks.lambda-url.us-west-2.on.aws/get_cache/online-clipboard/${otpValue}`
       );
-      response.then((data) => {
+      if(response.status == 404){
         toast.dismiss();
-        toast.success("Text retrieved");
-        setCopiedText(data.data.cache_values);
-      });
-      console.log(response);
+        toast.error("Invalid retrieval ID");
+        return;
+      }
+      toast.dismiss();
+      toast.success("Text retrieved");
+      setCopiedText(response.data.cache_values);
     } catch (error) {
       console.log(error);
       toast.dismiss();
-      // alert("Error retrieving text");
       toast.error("Error retrieving text");
     }
     closeModal();
@@ -216,7 +217,6 @@ function Clipboard() {
                   separator={<span> </span>}
                   inputStyle={{ width: "3rem", height: "3rem" }}
                   inputType="tel"
-                  
                   renderInput={(inputProps, index) => (
                     <input
                       {...inputProps}
