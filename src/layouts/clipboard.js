@@ -15,16 +15,6 @@ function Clipboard() {
   const [otpValue, setOtpValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [inputText, setInputText] = useState("");
-  // const handleRetrieve = () => {
-  //   setShowRetrieveModal(true);
-  // };
-
-  // const handleRetrieveConfirmation = () => {
-  //   setInputId("1234");
-  //   setShowRetrieveModal(false);
-  //   setShowModal(true);
-  // };
-
   const handleCloseRetrieveModal = () => {
     setShowRetrieveModal(false);
     closeModal();
@@ -46,7 +36,6 @@ function Clipboard() {
       setInputId("");
       setInputText("");
     });
-    // alert("ID has been copied");
     toast.success("ID has been copied");
   };
 
@@ -83,16 +72,10 @@ function Clipboard() {
     navigator.clipboard.writeText(copiedText).then(() => {
       setShowCopiedTextModal(true);
     });
-    // alert("Text has been copied");
     toast.success("Text has been copied");
   };
 
   const handleOtpChange = (otp) => {
-    // accept only numbers
-    // if (isNaN(otp)){
-    //   console.log("Invalid input");
-    //   return;
-    // }
     setOtpValue(otp);
   };
   const handleInputTextChange = (e) => {

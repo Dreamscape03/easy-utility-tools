@@ -1,0 +1,9 @@
+.dashboardContainer{
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+.contentContainer{
+    /* padding: 1rem 10rem; */
+    overflow-y: auto;
+    max-height: calc(100vh - 60px);
+}
