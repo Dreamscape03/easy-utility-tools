@@ -6,7 +6,9 @@ import { IoSunnyOutline } from "react-icons/io5";
 export const Navbar = () => {
   return (
     <div className={Style.navbarContainer}>
-      <div className={Style.logoContainer}>
+      <div onClick={() => {
+            window.open("/", "_self");
+          }} className={Style.logoContainer}>
         <img
           className={Style.logo}
           src={require("../assets/logo.png")}

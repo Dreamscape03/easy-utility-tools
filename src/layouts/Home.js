@@ -311,7 +311,7 @@ export const Home = () => {
             *Stats based on the last audit conducted in January 2024
           </div>
         </div>
-        <div className="d-flex justify-content-between gap-2">
+        <div className="d-flex flex-column-reverse flex-sm-row justify-content-between gap-2">
           <div className={Style.contentContainer}>
             <iframe
               class="aspect-video w-full"
