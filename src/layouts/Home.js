@@ -324,173 +324,220 @@ export const Home = () => {
             <div
               style={{
                 marginTop: "1rem",
+                fontFamily: "Arial, sans-serif",
               }}
             >
-              <h2
-                style={{
-                  marginBottom: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                  columnGap: "0.25rem",
-                }}
-              >
-                <FaHandPointRight /> Steps involved in using this tool
-              </h2>
-              <ol style={{ marginBottom: "20px" }}>
-                <li>
-                  Search OnlineClipboard.org in google or Directly type the URL
-                  in the URL Box of any browser.
-                </li>
-                <li>
-                  Just paste the text or write on the box given on the screen.
-                </li>
-                <li>
-                  Click on the button “Send text to Clipboard’ and save the
-                  retrieval id shown there.
-                </li>
-                <li>
-                  For retrieving your text, click on the retrieve option and
-                  paste or write the retrieval ID and then click on the Retrieve
-                  text Button.
-                </li>
-              </ol>
-
-              <h2
-                style={{
-                  marginBottom: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                  columnGap: "0.25rem",
-                }}
-              >
-                {" "}
-                <FaHandPointRight /> Features of this tool
-              </h2>
-              <ul style={{ marginBottom: "20px" }}>
-                <li>
-                  <strong>Simplified Information Management:</strong> Our online
-                  clipboard helps you to organise and access texts efficiently.
-                  Whether you want to share important links, articles or any
-                  type of text, our platform provides a centralised hub for
-                  managing a variety of content types. You can just write or
-                  paste the texts and click on the send text to clipboard button
-                  and then for retrieval just retrieve texts through retrieval
-                  ID.
-                </li>
-                <li>
-                  <strong>Seamless Collaboration:</strong> Collaboration is made
-                  seamless with our online clipboard. You can share specific
-                  content with colleagues, clients, or collaborators, fostering
-                  real-time collaboration and feedback.
-                </li>
-                <li>
-                  <strong>Cross-Platform Accessibility:</strong> Online
-                  clipboard is designed for cross-platform accessibility,
-                  allowing you to access your data from any device with an
-                  internet connection. Whether working on a desktop computer,
-                  laptop, tablet, or smartphone, you can seamlessly sync their
-                  clipboard content across devices, ensuring continuity and
-                  flexibility in their work environment.
-                </li>
-                <li>
-                  <strong>Enhanced Privacy and Security:</strong> Security and
-                  privacy are important in today's digital world. Online
-                  clipboard is deployed with advanced encryption protocols and
-                  secure access controls to safeguard your data. So, there is no
-                  need to worry about the privacy of your texts shared by using
-                  this Online Clipboard. Online Clipboard also doesn't save your
-                  texts in the database for more than a day and no one else can
-                  view your text without the retrieval ID. We are strongly
-                  serious about the privacy of the texts shared with this tool
-                  and are trying to give you a secure and seamless experience.
-                </li>
-              </ul>
-
-              <h2
-                style={{
-                  marginBottom: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                  columnGap: "0.25rem",
-                }}
-              >
-                <FaHandPointRight /> Frequently Asked Questions (FAQs)
-              </h2>
-              <ol style={{ marginBottom: "20px" }}>
-                <li>
-                  <strong>Is my data secure on your online clipboard?</strong>
-                  <br />
-                  Obviously! We ensure data security and privacy our top
-                  priority. By using sophisticated encryption techniques, we
-                  protect the information of the user on our platform.
-                </li>
-                <li>
-                  <strong>
-                    Can I collaborate with others using the online clipboard?
-                  </strong>
-                  <br />
-                  Collaboration has been designed as one of the important
-                  features of our online clipboard. Through this function, text
-                  can be shared with other users, thereby facilitating
-                  coordination and seamless teamwork among colleagues.
-                </li>
-                <li>
-                  <strong>How does cross-platform accessibility work?</strong>
-                  <br />
-                  The online clipboard has a function to synchronise data
-                  between different devices, thus making it possible to obtain
-                  information through any gadget that is connected to the
-                  Internet. If changes are made on one device, they will be
-                  reflected in updates on other devices as well.
-                </li>
-                <li>
-                  <strong>
-                    Can I store an infinite amount of content in the online
-                    clipboard?
-                  </strong>
-                  <br />
-                  Our platform has been designed to accommodate an enormous
-                  storage capacity, enabling you to share a considerable amount
-                  of text using this system. However, we cannot keep your data
-                  on our server for longer than 24 hours, as it would lead to an
-                  overwhelming volume of information and strain our resources.
-                </li>
-              </ol>
-
-              <h2
-                style={{
-                  marginBottom: "10px",
-                  display: "flex",
-                  alignItems: "center",
-                  columnGap: "0.25rem",
-                }}
-              >
-                {" "}
-                <FaHandPointRight />
-                <span> Conclusion</span>
-              </h2>
-              <p style={{ marginBottom: "20px" }}>
-                <ol>
-                  <li>
-                    If you are one person or a team of people who deal in text
-                    sharing and you are looking for an effective way to manage
-                    information and ensure that you collaborate with each other
-                    while giving full scope to your creativity, our online
-                    clipboard is a great solution. Its functionality allows
-                    rapid sharing of texts with the help of features like
-                    simplified access to content, seamless collaboration,
-                    versatility across all platforms as well as robust security
-                    mechanisms to ensure that no matter what is important data
-                    should not be stolen or leaked. To inform and equip users
-                    how to use our extraordinary tools, we provide answers to
-                    frequently asked questions on our homepage, as well as
-                    complete information about our online clipboard. Whether you
-                    are a student, working person or entrepreneur, our online
-                    clipboard is suitable to use to organise your data with
-                    efficacy and efficiency.
+              <div style={{ marginBottom: "20px" }}>
+                <h2
+                  style={{
+                    marginBottom: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "0.25rem",
+                    textTransform: "capitalize",
+                    color: "#444",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <FaHandPointRight style={{ color: "#FFDB58" }} /> Steps
+                  involved in using this tool
+                </h2>
+                <ol style={{ marginBottom: "20px", paddingLeft: "20px" }}>
+                  <li style={{ marginBottom: "10px" }}>
+                    <span style={{ fontWeight: "bold" }}>Step 1:</span> Search
+                    OnlineClipboard.org in Google or directly type the URL in
+                    the browser's address bar.
+                  </li>
+                  <li style={{ marginBottom: "10px" }}>
+                    <span style={{ fontWeight: "bold" }}>Step 2:</span> Just
+                    paste the text or write it in the provided box on the
+                    screen.
+                  </li>
+                  <li style={{ marginBottom: "10px" }}>
+                    <span style={{ fontWeight: "bold" }}>Step 3:</span> Click on
+                    the "Send text to Clipboard" button and save the retrieval
+                    ID shown there.
+                  </li>
+                  <li style={{ marginBottom: "10px" }}>
+                    <span style={{ fontWeight: "bold" }}>Step 4:</span> To
+                    retrieve your text, click on the retrieve option and paste
+                    or write the retrieval ID, then click on the "Retrieve text"
+                    button.
                   </li>
                 </ol>
-              </p>
+              </div>
+
+              <div style={{ marginBottom: "20px" }}>
+                <h2
+                  style={{
+                    marginBottom: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "0.25rem",
+                    textTransform: "capitalize",
+                    color: "#444",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <FaHandPointRight style={{ color: "#FFDB58" }} /> Features of
+                  this tool
+                </h2>
+                <ul style={{ marginBottom: "20px", paddingLeft: "20px" }}>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Simplified Information Management:
+                    </strong>{" "}
+                    Our online clipboard helps you to organize and access texts
+                    efficiently. Whether you want to share important links,
+                    articles, or any type of text, our platform provides a
+                    centralized hub for managing a variety of content types. You
+                    can simply write or paste the texts and click on the "Send
+                    text to clipboard" button, and then for retrieval, just
+                    retrieve texts through the retrieval ID.
+                  </li>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Seamless Collaboration:
+                    </strong>{" "}
+                    Collaboration is made seamless with our online clipboard.
+                    You can share specific content with colleagues, clients, or
+                    collaborators, fostering real-time collaboration and
+                    feedback.
+                  </li>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Cross-Platform Accessibility:
+                    </strong>{" "}
+                    Online clipboard is designed for cross-platform
+                    accessibility, allowing you to access your data from any
+                    device with an internet connection. Whether working on a
+                    desktop computer, laptop, tablet, or smartphone, you can
+                    seamlessly sync their clipboard content across devices,
+                    ensuring continuity and flexibility in their work
+                    environment.
+                  </li>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Enhanced Privacy and Security:
+                    </strong>{" "}
+                    Security and privacy are important in today's digital world.
+                    Online clipboard is deployed with advanced encryption
+                    protocols and secure access controls to safeguard your data.
+                    So, there is no need to worry about the privacy of your
+                    texts shared by using this Online Clipboard. Online
+                    Clipboard also doesn't save your texts in the database for
+                    more than a day, and no one else can view your text without
+                    the retrieval ID. We are strongly serious about the privacy
+                    of the texts shared with this tool and are trying to give
+                    you a secure and seamless experience.
+                  </li>
+                </ul>
+              </div>
+
+              <div style={{ marginBottom: "20px" }}>
+                <h2
+                  style={{
+                    marginBottom: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "0.25rem",
+                    textTransform: "capitalize",
+                    color: "#444",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <FaHandPointRight style={{ color: "#FFDB58" }} /> Frequently
+                  Asked Questions (FAQs)
+                </h2>
+                <ol style={{ marginBottom: "20px", paddingLeft: "20px" }}>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Is my data secure on your online clipboard?
+                    </strong>
+                    <br />
+                    Obviously! We ensure data security and privacy our top
+                    priority. By using sophisticated encryption techniques, we
+                    protect the information of the user on our platform.
+                  </li>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Can I collaborate with others using the online clipboard?
+                    </strong>
+                    <br />
+                    Collaboration has been designed as one of the important
+                    features of our online clipboard. Through this function,
+                    text can be shared with other users, thereby facilitating
+                    coordination and seamless teamwork among colleagues.
+                  </li>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      How does cross-platform accessibility work?
+                    </strong>
+                    <br />
+                    The online clipboard has a function to synchronize data
+                    between different devices, thus making it possible to obtain
+                    information through any gadget that is connected to the
+                    Internet. If changes are made on one device, they will be
+                    reflected in updates on other devices as well.
+                  </li>
+                  <li style={{ marginBottom: "20px" }}>
+                    <strong style={{ color: "#007bff" }}>
+                      Can I store an infinite amount of content in the online
+                      clipboard?
+                    </strong>
+                    <br />
+                    Our platform has been designed to accommodate an enormous
+                    storage capacity, enabling you to share a considerable
+                    amount of text using this system. However, we cannot keep
+                    your data on our server for longer than 24 hours, as it
+                    would lead to an overwhelming volume of information and
+                    strain our resources.
+                  </li>
+                </ol>
+              </div>
+
+              <div style={{ marginBottom: "20px" }}>
+                <h2
+                  style={{
+                    marginBottom: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "0.25rem",
+                    textTransform: "capitalize",
+                    color: "#444",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <FaHandPointRight style={{ color: "#FFDB58" }} />
+                  <span> Conclusion</span>
+                </h2>
+                <p style={{ marginBottom: "20px", lineHeight: "1.5" }}>
+                  <ol style={{ paddingLeft: "20px", marginBottom: "10px" }}>
+                    <li>
+                      If you are one person or a team of people who deal in text
+                      sharing and you are looking for an effective way to manage
+                      information and ensure that you collaborate with each
+                      other while giving full scope to your creativity, our
+                      online clipboard is a great solution. Its functionality
+                      allows rapid sharing of texts with the help of features
+                      like simplified access to content, seamless collaboration,
+                      versatility across all platforms, as well as robust
+                      security mechanisms to ensure that no matter what is
+                      important data should not be stolen or leaked. To inform
+                      and equip users how to use our extraordinary tools, we
+                      provide answers to frequently asked questions on our
+                      homepage, as well as complete information about our online
+                      clipboard. Whether you are a student, working person, or
+                      entrepreneur, our online clipboard is suitable to use to
+                      organize your data with efficacy and efficiency.
+                    </li>
+                  </ol>
+                </p>
+              </div>
             </div>
           </div>
           <div className={Style.socialMediaContainer}>
