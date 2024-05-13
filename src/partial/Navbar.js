@@ -22,6 +22,7 @@ export const Navbar = () => {
         </div>
         <div className={Style.btnContainer}>
           <button className={Style.loginBtn}>Login</button>
+          
         </div>
       </div>
     </div>

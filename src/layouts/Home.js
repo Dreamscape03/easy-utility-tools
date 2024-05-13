@@ -5,8 +5,13 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import { CiShare2 } from "react-icons/ci";
 import OtpInput from "react-otp-input";
-import { FaFacebook, FaWhatsappSquare } from "react-icons/fa";
-import { FaSquareXTwitter, FaTelegram } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaWhatsapp,
+  FaWhatsappSquare,
+} from "react-icons/fa";
+import { FaSquareXTwitter, FaT, FaTelegram } from "react-icons/fa6";
 import { FaHandPointRight } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -22,6 +27,156 @@ export const Home = () => {
   const [otpValue, setOtpValue] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [inputText, setInputText] = useState("");
+  const [showShareModal, setShowShareModal] = useState(false);
+  const openShareModal = () => setShowShareModal(true);
+  const closeShareModal = () => setShowShareModal(false);
+  const ShareModal = ({ isOpen, onClose }) => {
+    const shareContent = "Check out this amazing online clipboard tool";
+    const shareUrl = "https://onlineclipboard.org";
+
+    const handleCopyToClipboard = (text, message) => {
+      navigator.clipboard.writeText(text);
+      toast.success(message);
+    };
+
+    const handleShare = () => {
+      const whatsappUrl =
+        "whatsapp://send?text=" +
+        encodeURIComponent(shareContent + "\n" + shareUrl);
+      const instagramUrl =
+        "instagram://share?text=" +
+        encodeURIComponent(shareContent) +
+        "&url=" +
+        encodeURIComponent(shareUrl);
+
+      if (navigator.share) {
+        navigator
+          .share({
+            title: "Share",
+            text: shareContent,
+            url: shareUrl,
+          })
+          .then(() => console.log("Successful share"))
+          .catch((error) => console.log("Error sharing", error));
+      } else if (window.location.href.includes("instagram.com")) {
+        window.open(instagramUrl);
+      } else {
+        window.open(whatsappUrl);
+      }
+
+      onClose(); // Close the modal after sharing
+    };
+
+    return (
+      <Modal show={isOpen} onHide={onClose} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Share</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="share-buttons"style={{
+            display: "flex",
+            gap: "1rem",
+            justifyContent: "center",
+          }}>
+            <button
+              className="btn btn-primary"
+              onClick={() =>
+                handleCopyToClipboard(shareUrl, "URL copied to clipboard")
+              }
+            >
+              Copy URL to Clipboard
+              <i className="fas fa-copy" style={{
+                marginLeft: "0.5rem",
+              }}></i>
+            </button>
+            <button
+              className="btn btn-primary"
+              onClick={() =>
+                handleCopyToClipboard(
+                  shareContent,
+                  "Content copied to clipboard"
+                )
+              }
+            >
+              Copy Content
+              <i className="fas fa-copy" style={{
+                marginLeft: "0.5rem",
+              }}></i>
+            </button>
+          </div>
+          <div className="share-icons" style={{
+            display: "flex",
+            gap: "1rem",
+            justifyContent: "center",
+            marginTop: "1rem",
+          }}>
+            <button
+              className="btn btn-primary"
+              style={{ backgroundColor: "#1877f2", color: "#fff", border: "none" }}
+              onClick={() => {
+                window.open(
+                  `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    shareUrl
+                  )}`,
+                  "_blank"
+                );
+              }}
+            >
+              <FaFacebook />
+            </button>
+            <button
+              className="btn btn-primary"
+              style={{ backgroundColor: "#1DA1F2", color: "#fff", border: "none"}}
+              onClick={() => {
+                window.open(
+                  `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    shareContent + "\n" + shareUrl
+                  )}`,
+                  "_blank"
+                );
+              }}
+            >
+              <FaTwitter />
+            </button>
+            <button
+              className="btn btn-primary"
+              style={{ backgroundColor: "#25D366", color: "#fff", border: "none" }}
+              onClick={() => {
+                window.open(
+                  `https://wa.me/?text=${encodeURIComponent(
+                    shareContent + "\n" + shareUrl
+                  )}`,
+                  "_blank"
+                );
+              }}
+            >
+              <FaWhatsapp />
+            </button>
+            <button
+              className="btn btn-primary"
+              style={{ backgroundColor: "#0088cc", color: "#fff", border: "none" }}
+              onClick={() => {
+                window.open(
+                  `https://t.me/share/url?url=${encodeURIComponent(
+                    shareUrl
+                  )}&text=${encodeURIComponent(shareContent)}`,
+                  "_blank"
+                );
+              }}
+            >
+              <FaTelegram />
+            </button>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <button className="btn btn-primary" onClick={handleShare}>
+            More
+          </button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
+
   const handleCloseRetrieveModal = () => {
     setShowRetrieveModal(false);
     closeModal();
@@ -128,10 +283,11 @@ export const Home = () => {
         <div className={Style.headerContainer}>
           <div className={Style.headerText}>Online Clipboard</div>
           <div className={Style.shareBtnContainer}>
-            <button className={Style.shareBtn}>
+            <button className={Style.shareBtn} onClick={openShareModal}>
               <CiShare2 style={{ fontSize: "1rem" }} />
               <span style={{ fontSize: "1rem" }}>Share</span>
             </button>
+            <ShareModal isOpen={showShareModal} onClose={closeShareModal} />
           </div>
         </div>
 

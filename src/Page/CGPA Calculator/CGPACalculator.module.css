@@ -1,0 +1,51 @@
+.homeContainer {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.headerText {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subHeaderText {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.semesterContainer {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.gpaContainer {
+  margin-top: 20px;
+  font-weight: bold;
+}
