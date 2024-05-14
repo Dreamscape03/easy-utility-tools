@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Navbar } from "../../partial/Navbar";
 import Style from "./CGPACalculator.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export const CGPACalculator = () => {
   const [semesters, setSemesters] = useState([
@@ -31,6 +33,24 @@ export const CGPACalculator = () => {
       credit: 0,
       grade: "",
     });
+    setSemesters(updatedSemesters);
+  };
+
+  const handleRemoveSubject = (semesterIndex, subjectIndex) => {
+    const updatedSemesters = [...semesters];
+    updatedSemesters[semesterIndex].subjects.splice(subjectIndex, 1);
+    setSemesters(updatedSemesters);
+  };
+
+  const handleRemoveAllSubjects = (semesterIndex) => {
+    const updatedSemesters = [...semesters];
+    updatedSemesters[semesterIndex].subjects = [];
+    setSemesters(updatedSemesters);
+  };
+
+  const handleRemoveSemester = (semesterIndex) => {
+    const updatedSemesters = [...semesters];
+    updatedSemesters.splice(semesterIndex, 1);
     setSemesters(updatedSemesters);
   };
 
@@ -171,7 +191,7 @@ export const CGPACalculator = () => {
                             )
                           }
                         >
-                          <option value="">Grade</option>
+                          <option value=""> Select Grade</option>
                           <option value="A+">A+</option>
                           <option value="A">A</option>
                           <option value="B+">B+</option>
@@ -184,19 +204,47 @@ export const CGPACalculator = () => {
                           <option value="I">I</option>
                         </select>
                       </td>
+                        <button
+                          className={Style.removeButton}
+                          onClick={() =>
+                            handleRemoveSubject(semesterIndex, subjectIndex)
+                          }
+                        >
+                          <FontAwesomeIcon icon={faTimes} />
+                        </button>
                     </tr>
                   ))}
                 </tbody>
               </table>
               <button onClick={() => handleAddSubject(semesterIndex)}>
-                Add Subject
+                <FontAwesomeIcon icon={faPlus} />
+                &nbsp; Add Subject
+              </button>
+              <button
+                className={Style.removeAllButton}
+                onClick={() => handleRemoveAllSubjects(semesterIndex)}
+              >
+                Remove All Subjects
               </button>
               <div>
-                <h5> Your GPA: {calculateGPA(semester.subjects)}</h5>
+                <h5>Your GPA: {calculateGPA(semester.subjects)}</h5>
               </div>
             </div>
           ))}
-          <button onClick={handleAddSemester}>Add Semester</button>
+          <div>
+            <button onClick={handleAddSemester}>
+              <FontAwesomeIcon icon={faPlus} />
+              &nbsp; Add Semester
+            </button>
+            {semesters.length > 0 && (
+              <button
+                className={Style.removeAllButton}
+                onClick={() => handleRemoveSemester(semesters.length - 1)}
+              >
+                Remove Semester
+              </button>
+            )}
+          </div>
           <div>
             <h5>Your CGPA: {calculateCGPA()}</h5>
           </div>

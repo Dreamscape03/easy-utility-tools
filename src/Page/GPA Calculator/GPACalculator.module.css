@@ -35,8 +35,8 @@ table {
 
 th,
 td {
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 5px;
+  border: 2px solid #ddd;
 }
 
 th {
@@ -46,10 +46,13 @@ th {
 input[type="text"],
 input[type="number"],
 select {
-  width: calc(100% - 20px);
-  padding: 5px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 4px;
+  /* background-color: #f0f0f0; */
+  height: 50px;
 }
 
 button {
@@ -86,8 +89,8 @@ button:hover {
 
 .gpaPlanningContainer th,
 .gpaPlanningContainer td {
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 5px;
+  border: 2px solid #ddd;
 }
 
 .gpaPlanningContainer th {
@@ -95,10 +98,11 @@ button:hover {
 }
 
 .gpaPlanningContainer input[type="number"] {
-  width: 100%;
-  padding: 5px;
-  box-sizing: border-box;
-  margin-top: 5px;
+  border: none;
+  outline: none;
+  padding: 8px;
+  border-radius: 4px;
+  /* background-color: #f0f0f0; */
 }
 
 .gpaPlanningContainer button {
@@ -113,4 +117,25 @@ button:hover {
 
 .gpaPlanningContainer button:hover {
   background-color: #0056b3;
+}
+.removeButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.removeButton:hover {
+  background-color: #a71d2a;
+}
+.removeAllButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.removeAllButton:hover {
+  background-color: #a71d2a;
 }

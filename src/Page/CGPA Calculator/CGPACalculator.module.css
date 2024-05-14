@@ -25,9 +25,20 @@ table {
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
+  border: 2px solid #ccc;
+  padding: 5px;
   text-align: left;
+}
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  border: none; 
+  outline: none;
+  padding: 8px;
+  border-radius: 4px; 
+  /* background-color: #f0f0f0; */
+  height: 50px;
 }
 
 button {
@@ -48,4 +59,26 @@ button:hover {
 .gpaContainer {
   margin-top: 20px;
   font-weight: bold;
+}
+.removeButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.removeButton:hover {
+  background-color: #bd2130;
+}
+.removeAllButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.removeAllButton:hover {
+  background-color: #bd2130;
 }

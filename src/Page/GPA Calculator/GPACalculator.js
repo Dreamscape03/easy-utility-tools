@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../../partial/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Style from "./GPACalculator.module.css";
 
 export const GPACalculator = () => {
@@ -16,6 +18,16 @@ export const GPACalculator = () => {
     const newCourses = [...courses];
     newCourses.push({ name: "", credit: 0, grade: "" });
     setCourses(newCourses);
+  };
+
+  const removeCourse = (index) => {
+    const newCourses = [...courses];
+    newCourses.splice(index, 1);
+    setCourses(newCourses);
+  };
+
+  const removeAllCourses = () => {
+    setCourses([{ name: "", credit: 0, grade: "" }]);
   };
 
   const handleCourseChange = (index, event) => {
@@ -133,28 +145,39 @@ export const GPACalculator = () => {
                       <option value="">Select Grade</option>
                       <option value="A+">A+</option>
                       <option value="A">A</option>
-                      <option value="A-">A-</option>
                       <option value="B+">B+</option>
                       <option value="B">B</option>
-                      <option value="B-">B-</option>
                       <option value="C+">C+</option>
                       <option value="C">C</option>
-                      <option value="C-">C-</option>
-                      <option value="D+">D+</option>
                       <option value="D">D</option>
+                      <option value="E">E</option>
                       <option value="F">F</option>
+                      <option value="I">I</option>
                     </select>
                   </td>
+                  <button
+                    className={Style.removeButton}
+                    onClick={() => removeCourse(index)}
+                  >
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
                 </tr>
               ))}
             </tbody>
           </table>
-          <button onClick={addCourse}>Add Course</button>
+          <button onClick={addCourse}>
+            <FontAwesomeIcon icon={faPlus} />
+            &nbsp; Add Course
+          </button>
           <button onClick={calculateGPA}>Calculate GPA</button>
           <div className={Style.result}>
             <h5>Total Credits: {totalCredits}</h5>
-            <h5> Your GPA: {gpa}</h5>
+            <h5>Your GPA: {gpa}</h5>
           </div>
+          {/* Remove All Button */}
+          <button className={Style.removeAllButton} onClick={removeAllCourses}>
+            Remove All
+          </button>
         </div>
         {/* GPA Planning Calculator */}
         <div className={Style.gpaPlanningContainer}>
