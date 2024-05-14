@@ -143,7 +143,7 @@ export const CGPACalculator = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Subject Name</th>
+                    <th>Subject Name (optional)</th>
                     <th>Credit</th>
                     <th>Grade</th>
                   </tr>
