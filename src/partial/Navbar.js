@@ -6,12 +6,15 @@ import { IoSunnyOutline } from "react-icons/io5";
 export const Navbar = () => {
   return (
     <div className={Style.navbarContainer}>
-      <div onClick={() => {
-            window.open("/", "_self");
-          }} className={Style.logoContainer}>
+      <div
+        onClick={() => {
+          window.open("/", "_self");
+        }}
+        className={Style.logoContainer}
+      >
         <img
           className={Style.logo}
-          src={require("../assets/logo.png")}
+          src={require("../assets/logo_easy.png")}
           alt="logo"
         />
       </div>
@@ -22,7 +25,6 @@ export const Navbar = () => {
         </div>
         <div className={Style.btnContainer}>
           <button className={Style.loginBtn}>Login</button>
-          
         </div>
       </div>
     </div>

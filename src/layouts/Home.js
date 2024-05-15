@@ -23,16 +23,6 @@ export const Home = () => {
       <div className={Style.homeContainer}>
         <div className={Style.headerContainer}>
           <div className={Style.headerText}>Easy Utility Tools</div>
-          <div className={Style.subHeaderText}>
-            A collection of easy-to-use utility tools that will make your life
-            easier. Online tools that will help you in your daily life like
-            Online Clipboard, GPA Calculator, CGPA Calculator, and many more.
-            These tools are free to use and can be accessed from anywhere in the
-            world. You can use these tools to save time and make your life
-            easier. These tools are designed to be simple and easy to use so
-            that anyone can use them. You can use these tools to save time and
-            be more productive.
-          </div>
         </div>
         <div className={Style.toolContainer}>
           <div className={Style.toolCard}>
@@ -99,6 +89,18 @@ export const Home = () => {
                 Go to tool
               </button>
             </div>
+          </div>
+        </div>
+        <div className={Style.subHeaderContainer}>
+          <div className={Style.subHeaderText}>
+            A collection of easy-to-use utility tools that will make your life
+            easier. Online tools that will help you in your daily life like
+            Online Clipboard, GPA Calculator, CGPA Calculator, and many more.
+            These tools are free to use and can be accessed from anywhere in the
+            world. You can use these tools to save time and make your life
+            easier. These tools are designed to be simple and easy to use so
+            that anyone can use them. You can use these tools to save time and
+            be more productive.
           </div>
         </div>
       </div>
