@@ -8,7 +8,7 @@
 .headerContainer{
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
 }
 .subHeaderText{
   width: 900px;

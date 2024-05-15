@@ -16,10 +16,9 @@
 .subHeaderContainer{
   align-items: center;
   padding: 20px;
-  border: 1px solid #e0e0e0;
   border-radius: 5px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
@@ -36,14 +35,13 @@
 .toolCard {
   width: calc(33.33% - 20px);
   padding: 20px;
-  border: 1px solid #e0e0e0;
   border-radius: 5px;
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .toolCard:hover {
@@ -78,4 +76,62 @@
 
 .toolButton:hover {
   background-color: #0056b3;
+}
+.featureSection {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.featureHeader {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color:#007bff;
+}
+
+.featureContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featureCard {
+  flex: 1 1 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  overflow: hidden;
+}
+.featureCard:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background-color: #007bff;
+  color: #fff;
+}
+
+.featureCardContent {
+  padding: 20px;
+}
+.feedbackSection{
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.feedbackHeader{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff;
+}
+.feedbackCard {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.feedbackCard:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
