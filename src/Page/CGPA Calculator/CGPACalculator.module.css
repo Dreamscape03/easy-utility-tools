@@ -82,3 +82,13 @@ button:hover {
 .removeAllButton:hover {
   background-color: #bd2130;
 }
+.gradeTable {
+  margin-top: 20px;
+}
+.gradeTableContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.exampleTable {
+  margin-top: 20px;
+}

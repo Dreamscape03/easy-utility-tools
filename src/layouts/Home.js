@@ -29,6 +29,7 @@ export const Home = () => {
             <div className={Style.cardContent}>
               <div className={Style.icon}>
                 <img
+                  style={{ width: "80px", height: "80px"}}
                   src={require("../assets/online-clipboard.jpg")}
                   alt="Online Clipboard Icon"
                 />
@@ -50,6 +51,7 @@ export const Home = () => {
             <div className={Style.cardContent}>
               <div className={Style.icon}>
                 <img
+                  style={{ width: "80px", height: "80px" }}
                   src={require("../assets/gpa-calculator.jpg")}
                   alt="GPA Calculator Icon"
                 />
@@ -71,6 +73,7 @@ export const Home = () => {
             <div className={Style.cardContent}>
               <div className={Style.icon}>
                 <img
+                  style={{ width: "80px", height: "80px" }}
                   src={require("../assets/gpa-calculator.jpg")}
                   alt="CGPA Calculator Icon"
                 />
@@ -134,11 +137,11 @@ export const Home = () => {
                   </li>
                   <li style={{ marginBottom: "10px" }}>
                     <span style={{ fontWeight: "bold" }}>4.</span> Share
-                    specific text with collaborators
+                    specific text with collaborators.
                   </li>
                   <li style={{ marginBottom: "10px" }}>
                     <span style={{ fontWeight: "bold" }}>5.</span> Enjoy robust
-                    security and privacy
+                    security and privacy.
                   </li>
                   <li style={{ marginBottom: "10px" }}>
                     <span style={{ fontWeight: "bold" }}>6.</span> Sync data
@@ -146,7 +149,8 @@ export const Home = () => {
                   </li>
                 </ol>
                 <p>
-                  Simplify your workflow and enhance productivity with the Online!
+                  Simplify your workflow and enhance productivity with the
+                  Online!
                 </p>
               </div>
             </div>
@@ -172,7 +176,7 @@ export const Home = () => {
                   </li>
                   <li style={{ marginBottom: "10px" }}>
                     <span style={{ fontWeight: "bold" }}>5.</span> Set target
-                    GPAs and receive guidance
+                    GPAs and receive guidance.
                   </li>
                 </ol>
                 <p>Unlock your academic potential with ease!</p>
@@ -223,10 +227,30 @@ export const Home = () => {
             <div className={Style.feedbackCard}>
               <div className={Style.feedbackCardContent}>
                 <div className={Style.feedbackText}>
-                  "Easy Utility tools is your one-stop solution for storing and managing text snippets online. Enjoy all the tools you need to stay organized and efficient with your work while on the go!"
-                  </div>
+                  "Easy Utility tools is your one-stop solution for storing text
+                  snippets online and managing semester grades with ease through
+                  the GPA and CGPA calculators. Enjoy all the tools you need to
+                  stay organized and efficient with your work while on the go!"
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className={Style.subscribeSection}>
+          <div className={Style.subscribeHeader}>
+            Subscribe to Our Newsletter for Exclusive Updates and Offers!
+          </div>
+          <div className={Style.subscribeContainer}>
+            <div className={Style.subscribeInputContainer}>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className={Style.subscribeInput}
+              />
+            </div>
+            <div className={Style.subscribeButtonContainer}>
+              <button className={Style.subscribeButton}>Subscribe</button>
+            </div>
           </div>
         </div>
       </div>

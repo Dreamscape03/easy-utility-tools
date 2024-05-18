@@ -34,11 +34,11 @@ table {
 th,
 td {
   padding: 5px;
-  border: 2px solid #ddd;
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #007bff;
+  color: #fff;
 }
 
 input[type="text"],
@@ -49,7 +49,6 @@ select {
   outline: none;
   padding: 8px;
   border-radius: 4px;
-  /* background-color: #f0f0f0; */
   height: 50px;
 }
 
@@ -79,28 +78,8 @@ button:hover {
   margin-top: 40px;
 }
 
-.gpaPlanningContainer table {
-  width: 100%;
-  border-collapse: collapse;
+.gpaPlanningTable {
   margin-top: 20px;
-}
-
-.gpaPlanningContainer th,
-.gpaPlanningContainer td {
-  padding: 5px;
-  border: 2px solid #ddd;
-}
-
-.gpaPlanningContainer th {
-  background-color: #f2f2f2;
-}
-
-.gpaPlanningContainer input[type="number"] {
-  border: none;
-  outline: none;
-  padding: 8px;
-  border-radius: 4px;
-  /* background-color: #f0f0f0; */
 }
 
 .gpaPlanningContainer button {
@@ -136,4 +115,14 @@ button:hover {
 }
 .removeAllButton:hover {
   background-color: #a71d2a;
+}
+.gradeTable {
+  margin-top: 20px;
+}
+.gradeTableContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.exampleTable {
+  margin-top: 20px;
 }

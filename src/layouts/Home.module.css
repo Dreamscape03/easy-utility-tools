@@ -30,6 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 20px;
 }
 
 .toolCard {
@@ -49,15 +50,23 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .toolCard h2 {
   font-size: 20px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .toolCard p {
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .toolButtonContainer {
@@ -114,7 +123,7 @@
 }
 .feedbackSection{
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
@@ -134,4 +143,37 @@
 }
 .feedbackCard:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.subscribeSection {
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #5c5c5c;
+}
+.subscribeHeader {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff;
+}
+.subscribeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.subscribeInputContainer {
+  margin-bottom: 20px;
+}
+.subscribeInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+.subscribeButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
