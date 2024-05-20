@@ -2,7 +2,14 @@ import React from "react";
 import Style from "./Footer.module.css";
 import { redirect } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTelegram,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { FaI, FaX } from "react-icons/fa6";
 export const Footer = () => {
   return (
@@ -70,10 +77,12 @@ export const Footer = () => {
         <div className="d-flex w-100">© 2024 Easy Utility Tools</div>
         <div className="d-flex justify-content-sm-end justify-content-between gap-sm-4 gap-1 w-100">
           <div className="d-flex gap-2">
+            <FaWhatsapp style={{ color: "#25d366", fontSize: "1.5rem" }} />
             <FaFacebook style={{ color: "#1877f2", fontSize: "1.5rem" }} />
             <FaInstagram style={{ color: "#c32aa3", fontSize: "1.5rem" }} />
-            <FaLinkedin style={{ color: "#0a66c2", fontSize: "1.5rem" }} />
+            <FaTelegram style={{ color: "#0088cc", fontSize: "1.5rem" }} />
             <FaTwitter style={{ color: "#1da1f2", fontSize: "1.5rem" }} />
+            <FaLinkedin style={{ color: "#0a66c2", fontSize: "1.5rem" }} />
           </div>
         </div>
       </div>

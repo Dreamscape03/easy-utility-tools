@@ -19,7 +19,7 @@
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .subHeaderText {
@@ -87,8 +87,8 @@
   background-color: #0056b3;
 }
 .featureSection {
-  padding: 20px;
-  margin-bottom: 20px;
+  /* padding: 20px; */
+  margin-bottom: 40px;
 }
 
 .featureHeader {
@@ -176,4 +176,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.FAQSection{
+  margin-bottom: 40px;
+}
+.FAQHeader {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff;
+}
+.FAQCard {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }

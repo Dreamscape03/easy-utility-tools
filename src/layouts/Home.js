@@ -29,7 +29,7 @@ export const Home = () => {
             <div className={Style.cardContent}>
               <div className={Style.icon}>
                 <img
-                  style={{ width: "80px", height: "80px"}}
+                  style={{ width: "80px", height: "80px" }}
                   src={require("../assets/online-clipboard.jpg")}
                   alt="Online Clipboard Icon"
                 />
@@ -233,6 +233,64 @@ export const Home = () => {
                   stay organized and efficient with your work while on the go!"
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className={Style.FAQSection}>
+          <div className={Style.FAQHeader}>Frequently Asked Questions</div>
+          <div className={Style.FAQContainer}>
+            <div className={Style.FAQCard}>
+              <div className={Style.FAQCardContent}>
+                <h5>What is the Online Clipboard?</h5>
+                <p>
+                  The Online Clipboard is a cloud-based tool that allows you
+                  to store and manage text snippets online. You can access your
+                  clipboard from any device, share specific text with
+                  collaborators, and enjoy robust security features.
+                </p>
+              </div>
+            </div>
+            <div className={Style.FAQCard}>
+              <div className={Style.FAQCardContent}>
+                <h5>How do I use the GPA Calculator?</h5>
+                <p>
+                  To use the GPA Calculator, simply input your course details
+                  and grades, and the calculator will automatically calculate
+                  your GPA for the semester. You can track your academic
+                  performance and set target GPAs for future semesters.
+                </p>
+              </div>
+            </div>
+            <div className={Style.FAQCard}>
+              <div className={Style.FAQCardContent}>
+                <h5>What is the CGPA Calculator?</h5>
+                <p>
+                  The CGPA Calculator allows you to calculate your Cumulative
+                  Grade Point Average (CGPA) over multiple semesters. You can
+                  input your GPA and credits for each semester and visualize
+                  your academic progress with charts and graphs.
+                </p>
+              </div>
+            </div>
+            <div className={Style.FAQCard}>
+              <div className={Style.FAQCardContent}>
+                <h5>Are the tools secure?</h5>
+                <p>
+                  Yes, all the tools on Easy Utility Tools are secure and
+                  protect your data with robust security measures. Your privacy
+                  and data security are our top priorities.
+                </p>
+              </div>
+            </div>
+            <div className={Style.FAQCard}>
+            <div className={Style.FAQCardContent}>
+              <h5>Can I access the tools from any device?</h5>
+              <p>
+                Yes, you can access Easy Utility Tools from any device with
+                an internet connection. Whether you're on your computer, tablet,
+                or smartphone, you can use the tools anytime, anywhere.
+              </p>
+            </div>
             </div>
           </div>
         </div>
