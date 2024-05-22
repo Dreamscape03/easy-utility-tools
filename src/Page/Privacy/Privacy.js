@@ -100,7 +100,7 @@ export const Privacy = () => {
       </div> */}
       <div style={{padding: "1rem 10rem"}}>
         <h1>Privacy Policy</h1>
-        <p>Last updated: April 01, 2024</p>
+        <p>Last updated: May 22, 2024</p>
         <p>
           This Privacy Policy describes Our policies and procedures on the
           collection, use and disclosure of Your information when You use the
@@ -590,7 +590,7 @@ export const Privacy = () => {
             <p>By email: webmaster@onlineclipboard.org</p>
           </li>
           <li>
-            <p>By phone number: +918292009935</p>
+            <p>By phone number: +91 8292009935</p>
           </li>
         </ul>
       </div>
