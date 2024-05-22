@@ -284,8 +284,8 @@ export const OnlineClipboard = () =>{
     let id = Math.floor(1000 + Math.random() * 9000);
     setInputId(id);
     try {
-      const response = await axios.post(
-        "https://23up4yfe42aq3iaggfo726rzqu0wntdo.lambda-url.us-west-2.on.aws/create_cache",
+      const response = await axios.put(
+        "/api/create_cache",
         {
           cache_id: id,
           game_id: "online-clipboard",
@@ -439,10 +439,10 @@ export const OnlineClipboard = () =>{
                   >
                     <Modal.Header closeButton>
                       <Modal.Title>Copied Text</Modal.Title>
-                      <i
+                      {/* <i
                         className="fas fa-times close-icon"
                         onClick={handleCloseCopiedTextModal}
-                      ></i>
+                      ></i> */}
                     </Modal.Header>
                     <Modal.Body>
                       <textarea
