@@ -194,3 +194,13 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
+/* mobile  */
+
+@media (max-width: 768px) {
+  .toolCard {
+    width: calc(100% - 20px);
+  }
+  .featureCard {
+    flex: 1 1 100%;
+  }
+}
