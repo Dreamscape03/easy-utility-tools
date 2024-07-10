@@ -1,5 +1,5 @@
-import React from 'react'
-import Style from './OnlineClipboard.module.css';
+import React from "react";
+import Style from "./OnlineClipboard.module.css";
 import { useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -17,10 +17,11 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { Footer } from '../../partial/Footer';
-import { Navbar } from '../../partial/Navbar';
-
-export const OnlineClipboard = () =>{
+import { Footer } from "../../partial/Footer";
+import { Navbar } from "../../partial/Navbar";
+import { doc, getDoc, setDoc, deleteDoc } from "firebase/firestore";
+import db from "../../util/firebase";
+export const OnlineClipboard = () => {
   const [key, setKey] = useState("share");
   const [showRetrieveModal, setShowRetrieveModal] = useState(false);
   const [showCopiedTextModal, setShowCopiedTextModal] = useState(false);
@@ -240,17 +241,30 @@ export const OnlineClipboard = () =>{
     // alert("Retrieving text");
     toast.loading("Retrieving text");
     try {
-      const response = await axios.get(
-        `https://wip7mhydwhcixryqgshs6em4te0nxrks.lambda-url.us-west-2.on.aws/get_cache/online-clipboard/${otpValue}`
-      );
-      if (response.status == 404) {
+      // const response = await axios.get(
+      //   `https://wip7mhydwhcixryqgshs6em4te0nxrks.lambda-url.us-west-2.on.aws/get_cache/online-clipboard/${otpValue}`
+      // );
+      // if (response.status == 404) {
+      //   toast.dismiss();
+      //   toast.error("Invalid retrieval ID");
+      //   return;
+      // }
+      // toast.dismiss();
+      // toast.success("Text retrieved");
+      // setCopiedText(response.data.cache_values);
+      const docRef = doc(db, "online-clipboard", otpValue.toString());
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        toast.dismiss();
+        toast.success("Text retrieved");
+        setCopiedText(docSnap.data().cache_values);
+        // delete the cache after retrieving the text
+        await deleteDoc(docRef);
+      } else {
         toast.dismiss();
         toast.error("Invalid retrieval ID");
         return;
       }
-      toast.dismiss();
-      toast.success("Text retrieved");
-      setCopiedText(response.data.cache_values);
     } catch (error) {
       console.log(error);
       toast.dismiss();
@@ -284,21 +298,29 @@ export const OnlineClipboard = () =>{
     let id = Math.floor(1000 + Math.random() * 9000);
     setInputId(id);
     try {
-      const response = await axios.put(
-        "/api/create_cache",
-        {
-          cache_id: id,
-          game_id: "online-clipboard",
-          cache_values: inputText,
-          expiry: 1000,
-        }
-      );
-      console.log(response.data);
-      if (response.status == 200) {
-        toast.dismiss();
-        toast.success("Text sent to clipboard");
-        setShowRetrieveModal(true);
-      }
+      // const response = await axios.post(
+      //   "/api/create_cache",
+      //   {
+      //     cache_id: id,
+      //     game_id: "online-clipboard",
+      //     cache_values: inputText,
+      //     expiry: 1000,
+      //   }
+      // );
+      // console.log(response.data);
+      // if (response.status == 200) {
+      //   toast.dismiss();
+      //   toast.success("Text sent to clipboard");
+      //   setShowRetrieveModal(true);
+      // }
+      const docRef = doc(db, "online-clipboard", id.toString());
+      await setDoc(docRef, {
+        cache_values: inputText,
+        expiry: 1000,
+      });
+      toast.dismiss();
+      toast.success("Text sent to clipboard");
+      setShowRetrieveModal(true);
     } catch (error) {
       console.log(error);
       // alert("Error sending text to clipboard");
@@ -748,4 +770,4 @@ export const OnlineClipboard = () =>{
       <Footer />
     </div>
   );
-}
+};
