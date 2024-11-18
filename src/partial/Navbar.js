@@ -4,18 +4,18 @@ import Style from "./Navbar.module.css";
 import { IoSunnyOutline } from "react-icons/io5";
 
 export const Navbar = () => {
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate(); 
 
   const handleLoginClick = () => {
     console.log("Login button clicked");
-    navigate("/login"); // Replace "/login" with your desired path
+    navigate("/login"); 
   };
 
   return (
     <div className={Style.navbarContainer}>
       {/* Logo Section */}
       <div
-        onClick={() => window.open("/", "_self")} // Open the root path
+        onClick={() => window.open("/", "_self")} 
         className={Style.logoContainer}
       >
         <img
@@ -37,7 +37,7 @@ export const Navbar = () => {
         {/* Login Button */}
         <div className={Style.btnContainer}>
           <button className={Style.loginBtn} onClick={handleLoginClick}>
-            Login
+            Get Started
           </button>
         </div>
       </div>
