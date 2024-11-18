@@ -9,6 +9,10 @@ import { GPACalculator } from "./Page/GPA Calculator/GPACalculator";
 import { CGPACalculator } from "./Page/CGPA Calculator/CGPACalculator";
 import { OnlineClipboard } from "./Page/Online Clipboard/OnlineClipboard";
 import { Home } from "./layouts/Home";
+import { Signup } from "./Page/Signup/signup";
+import { Login } from "./Page/Login/login";
+import { ForgotPassword } from "./Page/Forgot password/ForgotPassword";
+
 
 
 const App = () => {
@@ -22,6 +26,9 @@ const App = () => {
         <Route path="cookie-policy" element={<Cookie />} />
         <Route path="gpa-calculator" element={<GPACalculator />} />
         <Route path="cgpa-calculator" element={<CGPACalculator />} />
+        <Route path="signup" element={<Signup />} />
+        <Route path="login" element={<Login />} />
+        <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </Router>
